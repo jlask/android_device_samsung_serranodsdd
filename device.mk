@@ -13,6 +13,21 @@
 # limitations under the License.
 #
 
+# RIL
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.ril_class=SerranoDSRIL
+
+# Stock RIL files
+PRODUCT_COPY_FILES += \
+    device/samsung/serranodsdd/proprietary/bin/rild:system/bin/rild \
+    device/samsung/serranodsdd/proprietary/lib/libril.so:system/lib/libril.so \
+    device/samsung/serranodsdd/proprietary/lib/libsec-ril.so:system/lib/libsec-ril.so \
+    device/samsung/serranodsdd/proprietary/lib/libsec-ril-dsds.so:system/lib/libsec-ril-dsds.so
+
+# Sound
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
+
 # Inherit from serrano-common
 $(call inherit-product, device/samsung/serrano-common/serrano-common.mk)
 

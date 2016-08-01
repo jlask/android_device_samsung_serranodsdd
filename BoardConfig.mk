@@ -20,6 +20,9 @@
 # definition file).
 #
 
+# Set permissive
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=22 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
+
 # Inherit from common serrano
 -include device/samsung/serrano-common/BoardConfigCommon.mk
 
@@ -30,7 +33,7 @@ TARGET_OTA_ASSERT_DEVICE := serranods,serranodsdd,serranodsub,serranodsxx,GT-I91
 TARGET_KERNEL_VARIANT_CONFIG := msm8930_serrano_eur_3g_defconfig
 
 # Radio/Ril class for i9192
-BOARD_RIL_CLASS := ../../../device/samsung/serranodsdd/ril
+BOARD_RIL_CLASS := ../../../device/samsung/serranodsdd/ril/
 COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 
 # BLN
